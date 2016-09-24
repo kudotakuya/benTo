@@ -120,7 +120,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 
         $this->response->charset('UTF-8');
         $this->response->type('json');
-        echo json_encode($bentoArray);
+        echo json_encode($row);
  
 
 	}
