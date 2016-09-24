@@ -177,8 +177,8 @@ $this->response->header('Access-Control-Allow-Origin', '*');
       $this->response->charset('UTF-8');
       $this->response->type('json');
         
-
-	  echo json_encode($position);
+      $positionArray = array('position' => $position);
+      echo json_encode($positionArray);
  
 
 
