@@ -163,7 +163,12 @@ $this->response->header('Access-Control-Allow-Origin', '*');
           'conditions' => array('Stages.bento_id' => 1)
       ]);
         print_r($query->toArray()[0]['status']);
-
+        if($query->toArray()[0]['status'] == 1){
+            $this->bentomenuTable = TableRegistry::get('BentoMenus');
+            $positionquery = $this->bentomenuTable->find('all',[↲
+                  'conditions' => array('and' => array('BentoMenus.bento_id' => 1,'BentoMenus.menu_id' => $query->toArray()[0]['menu_id'] ))↲
+             ]);↲
+        }
       $this->autoRender = false;
 
       $this->response->charset('UTF-8');
