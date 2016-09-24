@@ -110,17 +110,24 @@ $this->response->header('Access-Control-Allow-Origin', '*');
           'conditions' => array('id' => 1),
           'contain'=>['BentoMenus']
       ]);
-        $bentoArray = array();
-        foreach ($query->toArray()[0]['bento_menus'] as $row) {
+      $bentoArray = array();
+      foreach ($query->toArray()[0]['bento_menus'] as $row) {
             
-           array_push($bentoArray, $row['menu_id']);
-        }
-        print_r($query->toArray()[0]['bento_menus']);
-        $this->autoRender = false;
+         array_push($bentoArray, $row['menu_id']);
+      }
+        $posts_table = TableRegistry::get('Stages');
+        $menuquery = $posts_table->find('all');
+		print_r($memuquery->toArray());
+	
+	  
 
-        $this->response->charset('UTF-8');
-        $this->response->type('json');
-        echo json_encode($bentoArray);
+      $this->autoRender = false;
+
+      $this->response->charset('UTF-8');
+      $this->response->type('json');
+        
+
+	  echo json_encode($bentoArray);
  
 
 	}
