@@ -55,7 +55,8 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
 
-    $routes->connect('/bentos/*', ['controller' => 'Bentos', 'action' => 'index']);
+    $routes->connect('/bentos/', ['controller' => 'Bentos', 'action' => 'index']);
+    $routes->connect('/bentos/menuset', ['controller' => 'Bentos', 'action' => 'menuset']);
     /**
      * Connect catchall routes for all controllers.
      *
