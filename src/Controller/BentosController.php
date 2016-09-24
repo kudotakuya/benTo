@@ -13,14 +13,16 @@ class BentosController extends AppController{
         $query = $tableBento->find();
         $bentoArray = array();
         foreach ($query as $row) {
-            $bentoArray += $row;
+            
+            array_push($bentoArray, $row);
+
         }
 
         $this->autoRender = false;
 
         $this->response->charset('UTF-8');
         $this->response->type('json');
-        echo json_encode($row); 
+        echo json_encode($bentoArray); 
     }
 }
 
