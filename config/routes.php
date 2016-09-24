@@ -55,6 +55,7 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
 
+    $routes->connet('/bentos/*', ['controller' => 'Bentos', 'action' => 'index']);
     /**
      * Connect catchall routes for all controllers.
      *
