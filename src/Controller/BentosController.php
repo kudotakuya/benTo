@@ -115,7 +115,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
             
            array_push($bentoArray, $row);
         }
-       print_r($query->toArray()[0]);
+       print_r($query->toArray()[0]['bento_menus']);
         $this->autoRender = false;
 
         $this->response->charset('UTF-8');
