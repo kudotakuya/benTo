@@ -67,14 +67,12 @@ $this->response->header('Access-Control-Allow-Origin', '*');
         
         $this->response->header('Access-Control-Allow-Origin', '*');
 
-         $query = $this->Bentos->find('all',[
-            'fields' => array('Bentos.id', 'Stages.bento_id'),
-            'joins' => array( 
-      		    'table' => 'stages',
-            	'alias' => 'Stage',
+         $query = $this->Bentos->find()
+			->join([
+				'table' => 'stages',
+            	'alias' => 'Stages',
       		    'type' => 'INNER',
-           		'conditions' => 'Bentos.id = Stages.bento_id'
-           	 )
+           		'conditions' => 'Bentos.id = Stages.bento_id',
         ]);
 
         $this->autoRender = false;
