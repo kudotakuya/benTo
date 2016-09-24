@@ -11,13 +11,12 @@ class BentosController extends AppController{
     public function index(){
         $tableBento = TableRegistry::get('Bentos');
         $query = $tableBento->find();
+        $bentoArray = array();
         foreach ($query as $row) {
-       //     print_r($row); // $rowの型はCake\ORM\Entity
-      //      echo $row->id;
+            $bentoArray += $row;
         }
 
         $this->autoRender = false;
-     //   $someVariable = .....;
 
         $this->response->charset('UTF-8');
         $this->response->type('json');
