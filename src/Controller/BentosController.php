@@ -74,7 +74,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
             	'alias' => 'Stage',
       		    'type' => 'INNER',
            		'conditions' => 'Bentos.id = Stages.bento_id'
-           	 ),
+           	 )
         ]);
 
         $this->autoRender = false;
