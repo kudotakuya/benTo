@@ -66,9 +66,9 @@ $this->response->header('Access-Control-Allow-Origin', '*');
     public function wantList(){
         
         $this->response->header('Access-Control-Allow-Origin', '*');
-   $query = $this->Bentos->find('all',[
+  		$query = $this->Bentos->find('all',[
             'fields' => array('id','activation'),
-            'conditions' => NOT array('id' => 1),
+            'conditions' => array('id' => 1),
             'contain'=>['Stages']
         ]);
 
