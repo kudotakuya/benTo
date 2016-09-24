@@ -13,7 +13,7 @@ class BentosController extends AppController{
         $query = $tableBento->find();
         foreach ($query as $row) {
             print_r($row); // $rowの型はCake\ORM\Entity
-            echo $row->id;
+      //      echo $row->id;
         }
 
      //   $this->autoRender = false;
