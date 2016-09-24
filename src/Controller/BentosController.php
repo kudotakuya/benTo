@@ -67,10 +67,16 @@ $this->response->header('Access-Control-Allow-Origin', '*');
         
         $this->response->header('Access-Control-Allow-Origin', '*');
 
- //       $posts_table = TableRegistry::get('Stages');
- //       $query = $posts_table
- //           ->find()
- //           ->contain(['Menus']);
+        $posts_table = TableRegistry::get('Stages');
+        $query = $posts_table
+            ->find()
+            ->hydrate(false)
+			->join([
+				'table' => 'menus',
+				'alias' => 'Menus',
+				'type' => 'INNER',
+				'conditions' => 'Stages.menu_id = Menu.id'
+			]);
 
 //  		$query = $this->Bentos->find('all',[
 //            'fields' => array('Bentos.id'),
@@ -78,14 +84,14 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 //            'contain'=>['Stages']
 //        ]);
 
-         $query = $this->Bentos->find()
-   			 ->hydrate(false)
-   			 ->join([
-       			 'table' => 'stages',
-       			 'alias' => 'Stages',
-       			 'type' => 'INNER',
-       			 'conditions' => 'Bentos.id = Stages.bento_id'
-   			 ]);
+//         $query = $this->Bentos->find()
+//   			 ->hydrate(false)
+//   			 ->join([
+//       			 'table' => 'stages',
+//       			 'alias' => 'Stages',
+//       			 'type' => 'INNER',
+//       			 'conditions' => 'Bentos.id = Stages.bento_id'
+//   			 ]);
         $this->autoRender = false;
 
         $this->response->charset('UTF-8');
