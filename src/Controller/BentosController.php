@@ -144,15 +144,17 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 	}
     
     public function addwant(){
-        $bento_id = $this->request->data('bento_id');
-        $menu_id = $this->request->data('menu_id');
-        $status = $this->request->data('status');
+    $stagesTable = TableRegistry::get('Stages');
+    $stage = $stagesTable->newEntity();
 
-        $this->BentoMenus = TableRegistry::get('BentoMenus');
-        $this->BentoMenus->updateAll(
-            array ( 'flag' =>0),
-            array ( 'bento_id' => 1, 'menu_id' => 1 ) );
-	 }
-}
+    $stage->bento_id = 1;
+    $stage->menu_id = 3;
+    $stage->want_menu_id = 5;
+
+    if ($stagesTable->save($stage)) {
+            // $article エンティティは今や id を持っています
+             $id = $stage->id;
+       }
+    }
 
 ?>
