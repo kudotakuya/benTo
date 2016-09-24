@@ -126,14 +126,13 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 	
 
       $jsonArray = array('mymenu' => $bentoArray, 'allmenu' => $menuArray);
-print_r($jsonArray);
       $this->autoRender = false;
 
       $this->response->charset('UTF-8');
       $this->response->type('json');
         
 
-	  echo json_encode($bentoArray);
+	  echo json_encode($jsonArray);
  
 
 	}
