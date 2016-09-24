@@ -72,7 +72,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
    			 ->join([
        			 'table' => 'stages',
        			 'alias' => 'Stages',
-       			 'type' => 'INNER',
+       			 'type' => 'LEFT',
        			 'conditions' => 'Bentos.id = Stages.bento_id',
    			 ]);
         $this->autoRender = false;
