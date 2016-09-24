@@ -37,7 +37,7 @@ class StagesTable extends Table
         $this->belongsTo('Menus', [
             'foreignKey' => 'menu_id'
         ]);
-        $this->belongsTo('WantMenus', [
+        $this->belongsTo('Menus', [
             'foreignKey' => 'want_menu_id'
         ]);
     }
@@ -68,7 +68,7 @@ class StagesTable extends Table
     {
         $rules->add($rules->existsIn(['bento_id'], 'Bentos'));
         $rules->add($rules->existsIn(['menu_id'], 'Menus'));
-        $rules->add($rules->existsIn(['want_menu_id'], 'WantMenus'));
+        $rules->add($rules->existsIn(['want_menu_id'], 'Menus'));
         return $rules;
     }
 }
