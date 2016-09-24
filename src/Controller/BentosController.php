@@ -115,12 +115,12 @@ $this->response->header('Access-Control-Allow-Origin', '*');
             
            array_push($bentoArray, $row);
         }
-       print_r($query); 
-  //      $this->autoRender = false;
+        
+        $this->autoRender = false;
 
-    //    $this->response->charset('UTF-8');
-     //   $this->response->type('json');
-     //   echo json_encode($row);
+        $this->response->charset('UTF-8');
+        $this->response->type('json');
+        echo json_encode($query['bento_menus']);
  
 
 	}
