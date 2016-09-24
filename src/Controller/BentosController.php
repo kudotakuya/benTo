@@ -9,8 +9,10 @@ class BentosController extends AppController{
     public $name = 'Bentos';
 
     public function index(){
-        
-        $query = $this->Bentos->get(1,['contain'=>['BentoMenus']]);
+
+
+        $id = $this->request->data('id');
+        $query = $this->Bentos->find('all',['contain'=>['BentoMenus']]);
 
         $this->autoRender = false;
 
