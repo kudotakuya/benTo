@@ -74,10 +74,10 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 			->join([
 				'table' => 'menus',
 				'alias' => 'Menus',
-				'type' => 'LEFT',
-				'conditions' => 'Menus.id = Stages.menu_id'
+				'type' => 'INNER',
+				'conditions' => 'Stages.menu_id = Menu.id'
 			]);
-
+echo $this->element('sql_dump');
 //  		$query = $this->Bentos->find('all',[
 //            'fields' => array('Bentos.id'),
 //            'conditions' =>array('NOT'=> array('id' => 1)),
