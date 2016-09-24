@@ -77,7 +77,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 				'type' => 'INNER',
 				'conditions' => 'Stages.menu_id = Menu.id'
 			]);
-//var_dump($query->getDataSource()->getLog());
+//var_dump($this->Bentos->getDataSource()->getLog());
 //  		$query = $this->Bentos->find('all',[
 //            'fields' => array('Bentos.id'),
 //            'conditions' =>array('NOT'=> array('id' => 1)),
