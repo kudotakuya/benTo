@@ -14,7 +14,7 @@ class BentosController extends AppController{
         $bentoArray = array();
         foreach ($query as $row) {
             
-      //      array_push($bentoArray, $row);
+           array_push($bentoArray, $row);
 
         }
 
