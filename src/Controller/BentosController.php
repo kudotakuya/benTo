@@ -153,5 +153,5 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 
         $stagesTable->save($stage));
     }
-
+}
 ?>
