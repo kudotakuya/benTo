@@ -25,7 +25,7 @@ class BentosController extends AppController{
         echo json_encode($query);
 
         // 更新する内容を設定
-        $data = array('Bentos' => array('id' => 1, 'activation' => 0));
+        $data = array('id' => 1, 'activation' => 0);
         // 更新する項目（フィールド指定
         $fields = array('activation');
         // 更新
