@@ -153,10 +153,6 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 		$stage->menu_id = 3;
 		$stage->want_menu_id = 5;
 
-		if ($stagesTable->save($stage)) {
-    // The $article entity contains the id now
-    		$id = $stage->id;
-		}
 	}
 }
 
