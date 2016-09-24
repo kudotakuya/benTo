@@ -120,7 +120,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
             ->find();
 
 
-		var_dump($memuquery);
+		print_r($menuquery);
 	  
 
       $this->autoRender = false;
