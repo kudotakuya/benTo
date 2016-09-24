@@ -66,14 +66,18 @@ $this->response->header('Access-Control-Allow-Origin', '*');
     public function wantList(){
         
         $this->response->header('Access-Control-Allow-Origin', '*');
-  		$query = $this->Bentos->find('all',[
-            'fields' => array('Bentos.id'),
-            'conditions' =>array('NOT'=> array('id' => 1)),
-            'contain'=>['Stages']
-        ]);
 
+        $posts_table = TableRegistry::get('Stages');
+        $query = $posts_table
+            ->find()
+            ->contain(['Menus']);
 
-//		   $query = $this->Bentos->find('all', ['contain' => ['Stages']]);
+//  		$query = $this->Bentos->find('all',[
+//            'fields' => array('Bentos.id'),
+//            'conditions' =>array('NOT'=> array('id' => 1)),
+//            'contain'=>['Stages']
+//        ]);
+
 //         $query = $this->Bentos->find()
 //   			 ->hydrate(false)
 //   			 ->join([
