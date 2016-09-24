@@ -115,7 +115,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
             
          array_push($bentoArray, $row['menu_id']);
       }
-	$posts_table = TableRegistry::get('Stages');
+	$posts_table = TableRegistry::get('Menus');
         $menuquery = $posts_table
             ->find();
       $menuArray = array();
@@ -125,9 +125,8 @@ $this->response->header('Access-Control-Allow-Origin', '*');
       }
 	
 
-		print_r($menuArray);
-	  
-
+      $jsonArray = array('mymenu' => $bentoArray, 'allmenu' => $menuArray);
+print_r($jsonArray);
       $this->autoRender = false;
 
       $this->response->charset('UTF-8');
