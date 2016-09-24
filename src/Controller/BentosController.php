@@ -159,11 +159,9 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 		// Entities作成
 		$entities = $this->BentoMenus->newEntities($data);
 
-		// Entitiesの分だけ保存処理
-	//	foreach ($entities as $entity) {
-    	// Save entity
-    	$this->BentoMenus->save($entities);
-	//	}
+		foreach ($entities as $entity) {
+    		$this->BentoMenus->save($entity);
+		}
     }
 }
 
