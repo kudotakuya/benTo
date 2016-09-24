@@ -68,14 +68,13 @@ $this->response->header('Access-Control-Allow-Origin', '*');
         $this->response->header('Access-Control-Allow-Origin', '*');
 
          $query = $this->Bentos->find()
-			->hydrate(false)
-			->join([
-				'table' => 'stages',
-            	'alias' => 'Stages',
-      		    'type' => 'INNER',
-           		'conditions' => 'Bentos.id = Stages.bento_id',
-        ]);
-
+   			 ->hydrate(false)
+   			 ->join([
+       			 'table' => 'stages',
+       			 'alias' => 'Stages',
+       			 'type' => 'LEFT',
+       			 'conditions' => 'Bentos.id = Stages.bento_id',
+   			 ]);
         $this->autoRender = false;
 
         $this->response->charset('UTF-8');
