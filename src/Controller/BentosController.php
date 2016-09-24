@@ -41,7 +41,7 @@ class BentosController extends AppController{
   //      $this->BentoMenus->updateAll(
   //          array ( 'flag' =>0),
  //           array ( 'bento_id' => 1, 'menu_id' => 1 ) );
- //   }
+  }
 
 }
 
