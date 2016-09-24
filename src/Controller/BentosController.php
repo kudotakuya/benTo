@@ -17,8 +17,8 @@ $this->response->header('Access-Control-Allow-Origin', '*');
             array ( 'id'   => $id ) );
 
         $query = $this->Bentos->find('all',[
-            'fields' => array('id','activation'),
-            'conditions' => array('id' => $id),
+            'fields' => array('Bentos.id','Bentos.activation','BentoMenus.position'),
+            'conditions' => array('id' => 1),
             'contain'=>['BentoMenus']
         ]);
 
