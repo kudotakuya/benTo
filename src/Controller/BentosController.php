@@ -73,7 +73,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
       		    'table' => 'stages',
             	'alias' => 'Stages',
        		    'type' => 'LEFT',
-           		'conditions' => 'Bentos.id = Stages.bento_id'
+           		'conditions' => 'id = Stages.bento_id'
            	 )
         ]);
 
