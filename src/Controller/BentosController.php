@@ -168,8 +168,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
             $positionquery = $this->bentomenuTable->find('all',[
                   'conditions' => array('BentoMenus.bento_id' => 1,'BentoMenus.menu_id' => $query->toArray()[0]['menu_id'] )
              ]);
-            $position = $positionquery->toArray()['position'];
-            print_r($positionquery->toArray());
+            $position = $positionquery->toArray()[0]['position'];
         }else{
             $position = -1;
         }
