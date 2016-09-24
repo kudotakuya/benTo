@@ -75,7 +75,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 				'table' => 'menus',
 				'alias' => 'Menus',
 				'type' => 'LEFT',
-				'conditions' => 'Stages.menu_id = Menus.id'
+				'conditions' => 'Menus.id = Stages.menu_id'
 			]);
 
 //  		$query = $this->Bentos->find('all',[
