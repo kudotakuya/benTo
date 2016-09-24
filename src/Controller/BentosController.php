@@ -12,7 +12,7 @@ class BentosController extends AppController{
 
 
         $id = $this->request->data('id');
-        $query = $this->Bentos->find(1,[
+        $query = $this->Bentos->find('all',[
             'contain'=>['BentoMenus']
         ]);
 
