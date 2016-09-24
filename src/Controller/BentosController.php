@@ -11,15 +11,15 @@ class BentosController extends AppController{
     public function index(){
 
 
-      //  $this->Bentos->save(array('id' => 1),'activation' => 0);
-        $this->Bentos->updateAll(
-                   array ( 'activation' =>0),
-                          array ( 'id'   => 1 ) );
-
         $id = $this->request->data('id');
+        $status = $this->request->data('status');
+        $this->Bentos->updateAll(
+            array ( 'activation' =>0),
+            array ( 'id'   => $id ) );
+
         $query = $this->Bentos->find('all',[
             'fields' => array('id','activation'),
-            'conditions' => array('id' => 2),
+            'conditions' => array('id' => $id),
             'contain'=>['BentoMenus']
         ]);
 
@@ -31,6 +31,11 @@ class BentosController extends AppController{
 
         // 更新
     }
+
+    public function menuset(){
+        
+    }
+
 }
 
 ?>
