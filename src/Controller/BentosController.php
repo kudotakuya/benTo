@@ -143,7 +143,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 
 	}
     
-    public function addWant(){
+    public function addwant(){
         $bento_id = $this->request->data('bento_id');
         $menu_id = $this->request->data('menu_id');
         $status = $this->request->data('status');
