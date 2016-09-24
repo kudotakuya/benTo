@@ -120,8 +120,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
             ->find();
 
 
-		print_r($query->toArray()[0]['bento_menus']);
-		print_r($memuquery);
+		var_dump($memuquery);
 	  
 
       $this->autoRender = false;
