@@ -105,21 +105,28 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 	  $this->response->header('Access-Control-Allow-Origin', '*');
       $bento_id = $this->request->data('bento_id');
 
- //     $query = $this->Bentos->find('all',[
- //         'fields' => array('id','activation'),
- //         'conditions' => array('id' => 1),
- //         'contain'=>['BentoMenus']
- //     ]);
+      $query = $this->Bentos->find('all',[
+          'fields' => array('id','activation'),
+          'conditions' => array('id' => 1),
+          'contain'=>['BentoMenus']
+      ]);
       $bentoArray = array();
-   //   foreach ($query->toArray()[0]['bento_menus'] as $row) {
+      foreach ($query->toArray()[0]['bento_menus'] as $row) {
             
-   //      array_push($bentoArray, $row['menu_id']);
-   //   }
-        $posts_table = TableRegistry::get('Menus');
+         array_push($bentoArray, $row['menu_id']);
+      }
+	$posts_table = TableRegistry::get('Stages');
         $menuquery = $posts_table
-					->find();
-		print_r($memuquery);
+            ->find()
+            ->hydrate(false)
+			->join([
+				'table' => 'menus',
+				'alias' => 'Menus',
+				'type' => 'INNER',
+				'conditions' => 'Stages.menu_id = Menus.id'
+			]);
 	
+		print_r($memuquery);
 	  
 
       $this->autoRender = false;
