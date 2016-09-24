@@ -159,7 +159,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 
       $this->stagesTable = TableRegistry::get('Stages');
       
-      $query = $this->stageTable->find('all',[
+      $query = $this->stagesTable->find('all',[
           'conditions' => array('id' => $bento_id)
       ]);
       
