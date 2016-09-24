@@ -118,9 +118,14 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 	$posts_table = TableRegistry::get('Stages');
         $menuquery = $posts_table
             ->find();
+      $menuArray = array();
+      foreach ($menuquery->toArray() as $menurow) {
+            
+         array_push($menuArray, $menurow['id']);
+      }
+	
 
-
-		print_r($menuquery->toArray());
+		print_r($menuArray);
 	  
 
       $this->autoRender = false;
