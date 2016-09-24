@@ -164,10 +164,10 @@ $this->response->header('Access-Control-Allow-Origin', '*');
       ]);
       print_r($query->toArray()[0]['status']);
 
-        if($query->toArray()[0]['status'] == 1){
+      //  if($query->toArray()[0]['status'] == 1){
             $this->bentomenuTable = TableRegistry::get('BentoMenus');
             $positionquery = $this->bentomenuTable->find('all');↲
-        }
+      //  }
       $this->autoRender = false;
 
       $this->response->charset('UTF-8');
