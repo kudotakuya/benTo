@@ -14,7 +14,7 @@ class BentoTable extends Table {
         $this->primaryKey('id');
         
       //  $this->table('bento');
-        $this->hasMany('bento_menus, [
+        $this->hasMany('stages, [
             'foreignKey' => 'bento_id',
             ]);
     }
