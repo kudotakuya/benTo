@@ -144,14 +144,14 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 	}
     
     public function addwant(){
-    $stagesTable = TableRegistry::get('Stages');
-    $stage = $stagesTable->newEntity();
+        $stagesTable = TableRegistry::get('Stages');
+        $stage = $stagesTable->newEntity();
 
-    $stage->bento_id = 1;
-    $stage->menu_id = 3;
-    $stage->want_menu_id = 5;
+        $stage->bento_id = 1;
+        $stage->menu_id = 3;
+        $stage->want_menu_id = 5;
 
-    $stagesTable->save($stage));
+        $stagesTable->save($stage));
     }
 
 ?>
