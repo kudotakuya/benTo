@@ -40,8 +40,8 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 
         $this->BentoMenus = TableRegistry::get('BentoMenus');
         $this->BentoMenus->updateAll(
-            array ( 'flag' =>0),
-            array ( 'bento_id' => 1, 'menu_id' => 1 ) );
+            array ( 'flag' => $status),
+            array ( 'bento_id' => $bento_id, 'menu_id' => $menu_id ) );
   }
 
     public function activate(){
