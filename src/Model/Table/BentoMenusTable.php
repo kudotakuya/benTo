@@ -1,20 +1,19 @@
 <?php
 namespace App\Model\Table;
 
-use App\Model\Entity\Stage;
+use App\Model\Entity\BentoMenu;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * Stages Model
+ * BentoMenus Model
  *
  * @property \Cake\ORM\Association\BelongsTo $Bentos
  * @property \Cake\ORM\Association\BelongsTo $Menus
- * @property \Cake\ORM\Association\BelongsTo $WantMenus
  */
-class StagesTable extends Table
+class BentoMenusTable extends Table
 {
 
     /**
@@ -27,18 +26,13 @@ class StagesTable extends Table
     {
         parent::initialize($config);
 
-        $this->table('stages');
-        $this->displayField('id');
-        $this->primaryKey('id');
+        $this->table('bento_menus');
 
         $this->belongsTo('Bentos', [
             'foreignKey' => 'bento_id'
         ]);
         $this->belongsTo('Menus', [
             'foreignKey' => 'menu_id'
-        ]);
-        $this->belongsTo('WantMenus', [
-            'foreignKey' => 'want_menu_id'
         ]);
     }
 
@@ -51,8 +45,12 @@ class StagesTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->integer('id')
-            ->allowEmpty('id', 'create');
+            ->integer('flag')
+            ->allowEmpty('flag');
+
+        $validator
+            ->integer('position')
+            ->allowEmpty('position');
 
         return $validator;
     }
@@ -68,7 +66,6 @@ class StagesTable extends Table
     {
         $rules->add($rules->existsIn(['bento_id'], 'Bentos'));
         $rules->add($rules->existsIn(['menu_id'], 'Menus'));
-        $rules->add($rules->existsIn(['want_menu_id'], 'WantMenus'));
         return $rules;
     }
 }

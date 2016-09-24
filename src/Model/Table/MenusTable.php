@@ -1,45 +1,19 @@
 <?php
-<<<<<<< HEAD
-
 namespace App\Model\Table;
 
-use Cake\ORM\Table;
-
-class BentosTable extends Table {
-
-    public function initialize(array $config) {
-
-//        parent::initialize($config);
-
-//        $this->table('Bentos');
-    //    $this->displayField('name');
-//        $this->primaryKey('id');
-        
-      //  $this->table('bento');
-//        $this->hasMany('Bento_menus, [
-//            'foreignKey' => 'bento_id',
-//            ]);
-    }
-
-}
-
-?>
-=======
-namespace App\Model\Table;
-
-use App\Model\Entity\Bento;
+use App\Model\Entity\Menu;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * Bentos Model
+ * Menus Model
  *
  * @property \Cake\ORM\Association\HasMany $BentoMenus
  * @property \Cake\ORM\Association\HasMany $Stages
  */
-class BentosTable extends Table
+class MenusTable extends Table
 {
 
     /**
@@ -52,15 +26,15 @@ class BentosTable extends Table
     {
         parent::initialize($config);
 
-        $this->table('bentos');
-        $this->displayField('id');
+        $this->table('menus');
+        $this->displayField('name');
         $this->primaryKey('id');
 
         $this->hasMany('BentoMenus', [
-            'foreignKey' => 'bento_id'
+            'foreignKey' => 'menu_id'
         ]);
         $this->hasMany('Stages', [
-            'foreignKey' => 'bento_id'
+            'foreignKey' => 'menu_id'
         ]);
     }
 
@@ -77,14 +51,8 @@ class BentosTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->integer('activation')
-            ->allowEmpty('activation');
-
-        $validator
-            ->dateTime('deadtime')
-            ->allowEmpty('deadtime');
+            ->allowEmpty('name');
 
         return $validator;
     }
 }
->>>>>>> 4fd103c15af34cfffd548ffefc208c51c7c664da

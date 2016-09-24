@@ -9,21 +9,21 @@ class BentosController extends AppController{
     public $name = 'Bentos';
 
     public function index(){
-        //$this->loadModel('Bentos');
-        $tableBento = TableRegistry::get('Bentos');
-        $query = $tableBento->find('all');
-        $bentoArray = array();
-        foreach ($query as $row) {
+        //`  $this->loadModel('Bentos');
+      //  $tableBento = TableRegistry::get('Bentos');
+        $query = $this->Bentos->get(1,['contain'=>['BentoMenus']]);
+        //$bentoArray = array();
+        //foreach ($query as $row) {
             
-           array_push($bentoArray, $row);
+          // array_push($bentoArray, $row);
 
-        }
+        //}
 
         $this->autoRender = false;
 
         $this->response->charset('UTF-8');
         $this->response->type('json');
-        echo json_encode($bentoArray); 
+        echo json_encode($query); 
     }
 }
 
