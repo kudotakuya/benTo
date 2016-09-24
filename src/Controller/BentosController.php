@@ -40,7 +40,7 @@ class BentosController extends AppController{
 
         $this->BentoMenus = TableRegistry::get('BentoMenus');
         $this->BentoMenus->updateAll(
-            array ( 'flag' =>1),
+            array ( 'flag' =>0),
             array ( 'bento_id' => 1, 'menu_id' => 1 ) );
   }
 
