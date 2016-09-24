@@ -111,11 +111,11 @@ $this->response->header('Access-Control-Allow-Origin', '*');
           'contain'=>['BentoMenus']
       ]);
         $bentoArray = array();
-        foreach ($query as $row) {
+        foreach ($query->toArray() as $row) {
             
            array_push($bentoArray, $row);
         }
-       print_r($query->toArray());
+       print_r($query->toArray()[0]);
         $this->autoRender = false;
 
         $this->response->charset('UTF-8');
