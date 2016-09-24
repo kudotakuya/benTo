@@ -111,7 +111,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
           'contain'=>['BentoMenus']
       ]);
         $bentoArray = array();
-        foreach ($query['bento_menus'] as $row) {
+        foreach ($query as $row) {
             
            array_push($bentoArray, $row);
         }
