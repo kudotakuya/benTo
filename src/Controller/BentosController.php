@@ -151,10 +151,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
     $stage->menu_id = 3;
     $stage->want_menu_id = 5;
 
-    if ($stagesTable->save($stage)) {
-            // $article エンティティは今や id を持っています
-             $id = $stage->id;
-       }
+    $stagesTable->save($stage));
     }
 
 ?>
