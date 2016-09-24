@@ -127,7 +127,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
       $this->response->type('json');
         
 
-	  echo json_encode($menuquery);
+	  echo json_encode($bentoArray);
  
 
 	}
