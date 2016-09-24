@@ -149,10 +149,13 @@ $this->response->header('Access-Control-Allow-Origin', '*');
         $bento_id = $this->request->data('bento_id');
         $menu_id = $this->request->data('menu_id');
         $status = $this->request->data('status');
-
+		$data = [
+        	'bento_id' => 1,
+        	'menu_id' => 3,
+			'want_menu_id' => 5
+		];
         $this->BentoMenus = TableRegistry::get('Stages');
-        $this->BentoMenus->saveAll(
-            array ( 'bento_id' => 1, 'menu_id' => 1, 'want_menu_id' => 4 ) );
+        $this->BentoMenus->save($data);
     }
 }
 
