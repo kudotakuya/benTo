@@ -145,9 +145,13 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 	}
     
     public function addwant(){
+        $bento_id = $this->request->data('bento_id');
+        $menu_id = $this->request->data('menu_id');
+        $want_menu_id = $this->request->data('want_menu_id');
+
         $this->stagesTable = TableRegistry::get('Stages');
         $stage = $this->stagesTable->newEntity();
-        $data = array('bento_id' => 1, 'menu_id' => 3, 'want_menu_id' => 5);
+        $data = array('bento_id' => $bento_id, 'menu_id' => $menu_id, 'want_menu_id' => $want_menu_id);
         $stage = $this->stagesTable->patchEntity($stage, $data);
         $this->stagesTable->save($stage);
     }
@@ -179,10 +183,20 @@ $this->response->header('Access-Control-Allow-Origin', '*');
         
       $positionArray = array('position' => $position);
       echo json_encode($positionArray);
- 
-
-
 
     } 
+
+    public function match(){
+
+        $bento_id = $this->request->data('bento_id');
+        $menu_id = $this->request->data('menu_id');
+
+        $this->BentoMenus = TableRegistry::get('Stages');
+        $this->BentoMenus->updateAll(
+            array ( 'status' => 1),
+            array ( 'bento_id' => 2, 'menu_id' => 2 ) );
+
+    }
+
 }
 ?>
