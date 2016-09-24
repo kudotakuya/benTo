@@ -89,7 +89,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
            //     array_push($bentoArray, $row['stages']);
              }
           }
-            print_r($bentoArray);
+            print_r($row);
 	
 //         $query = $this->Bentos->find()
 //   			 ->hydrate(false)
