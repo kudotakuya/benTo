@@ -166,7 +166,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 
         if($query->toArray()[0]['status'] == 1){
             $this->bentomenuTable = TableRegistry::get('BentoMenus');
-           // $positionquery = $this->bentomenuTable->find('all');↲
+            $positionquery = $this->bentomenuTable->find('all');↲
         }
       $this->autoRender = false;
 
