@@ -13,7 +13,7 @@ class BentosController extends AppController{
 
         $id = $this->request->data('id');
         $query = $this->Bentos->find('all',[
-            'fields' => array('id'),
+            'fields' => array('id','activation'),
             'conditions' => array('id' => 2),
             'contain'=>['BentoMenus']
         ]);
@@ -22,7 +22,14 @@ class BentosController extends AppController{
 
         $this->response->charset('UTF-8');
         $this->response->type('json');
-        echo json_encode($query); 
+        echo json_encode($query);
+
+        // 更新する内容を設定
+        $data = array('Bentos' => array('id' => 1, 'activation' => 0));
+        // 更新する項目（フィールド指定
+        $fields = array('activation');
+        // 更新
+        $this->Hoge->save($data, false, $fields);
     }
 }
 
