@@ -84,7 +84,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
             'conditions' =>array('NOT'=> array('id' => 1)),
             'contain'=>['Stages']
         ]);
-print_r($query->toArray());
+//print_r($query->toArray()[0]['stage']);
 //         $query = $this->Bentos->find()
 //   			 ->hydrate(false)
 //   			 ->join([
@@ -98,7 +98,7 @@ print_r($query->toArray());
 
         $this->response->charset('UTF-8');
         $this->response->type('json');
-        echo json_encode($query);
+        echo json_encode($query->toArray()[0]['stage']);
 
 	}
 
