@@ -84,7 +84,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
             'conditions' =>array('NOT'=> array('id' => 1)),
             'contain'=>['Stages']
         ]);
-print_r($query->toArray()[0]['stages']);
+print_r($query->toArray());
 //         $query = $this->Bentos->find()
 //   			 ->hydrate(false)
 //   			 ->join([
