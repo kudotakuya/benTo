@@ -92,6 +92,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
        			 'type' => 'INNER',
        			 'conditions' => 'Bentos.id = Stages.bento_id'
    			 ]);
+var_dump($this->Bentos->getDataSource()->getLog());
         $this->autoRender = false;
 
         $this->response->charset('UTF-8');
