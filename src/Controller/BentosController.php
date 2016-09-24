@@ -176,7 +176,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
       $this->response->type('json');
         
 
-	  echo json_encode($query);
+	  echo json_encode($positionquery);
  
 
 
