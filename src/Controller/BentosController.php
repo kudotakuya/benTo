@@ -146,8 +146,9 @@ $this->response->header('Access-Control-Allow-Origin', '*');
     
     public function addwant(){
         $stagesTable = TableRegistry::get('Stages');
+        $da = $this->find()->first();
         $data = ('bento_id' => 1, 'menu_id' => 3, 'want_menu_id' => 5);
-        $table = $stageTable->newEntity($data);
+        $table = $stageTable->patchEntity($da, $data);
         $stageTable->save($table);
     }
 }
