@@ -117,15 +117,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
       }
 	$posts_table = TableRegistry::get('Stages');
         $menuquery = $posts_table
-            ->find()
-            ->hydrate(false)
-			->join([
-				'table' => 'menus',
-				'alias' => 'Menus',
-				'type' => 'INNER',
-				'conditions' => 'Stages.menu_id = Menus.id'
-			]);
-	
+            ->find();
 		print_r($memuquery);
 	  
 
@@ -135,7 +127,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
       $this->response->type('json');
         
 
-	  echo json_encode($bentoArray);
+	  echo json_encode($menuquery);
  
 
 	}
