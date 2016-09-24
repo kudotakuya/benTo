@@ -150,8 +150,6 @@ $this->response->header('Access-Control-Allow-Origin', '*');
         $data = ('bento_id' => 1, 'menu_id' => 3, 'want_menu_id' => 5);
         $stage = $stagesTable->patchEntity($stage, $data);
         $stagesTable->save($table);
-        $this->set(compact('stage'));
-        $this->set('_serialize', ['stage']);
     }
 }
 ?>
