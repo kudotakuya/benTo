@@ -144,7 +144,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 	}
     
     public function addWant(){
-	  	$this->response->header('Access-Control-Allow-Origin', '*');
+	//  	$this->response->header('Access-Control-Allow-Origin', '*');
  
    		$stagesTable = TableRegistry::get('Stages');
 		$stage = $stagesTable->newEntity();
