@@ -117,7 +117,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
       }
         $posts_table = TableRegistry::get('Menus');
         $menuquery = $posts_table->find('all');
-		print_r($memuquery->toArray());
+		print_r($memuquery);
 	
 	  
 
