@@ -9,9 +9,9 @@ class BentosController extends AppController{
     public $name = 'Bentos';
 
     public function index(){
-        $this->loadModel('Bentos');
-      //  $tableBento = TableRegistry::get('Bentos');
-        $query = $this->Bentos->find('all');
+        //$this->loadModel('Bentos');
+        $tableBento = TableRegistry::get('Bentos');
+        $query = $tableBento->find();
         $bentoArray = array();
         foreach ($query as $row) {
             
