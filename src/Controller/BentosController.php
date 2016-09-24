@@ -67,10 +67,10 @@ $this->response->header('Access-Control-Allow-Origin', '*');
         
         $this->response->header('Access-Control-Allow-Origin', '*');
 
-    //     $query = $this->Bentos->find('all',[
-    //        'fields' => array('id','activation'),
-    //        'contain'=>['Stages']
-    //    ]);
+         $query = $this->Bentos->find('all',[
+            'fields' => array('id','activation'),
+            'contain'=>['Stages']
+        ]);
 
         $this->autoRender = false;
 
