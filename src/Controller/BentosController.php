@@ -144,20 +144,16 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 	}
     
     public function addWant(){
-	  $this->response->header('Access-Control-Allow-Origin', '*');
+	  	$this->response->header('Access-Control-Allow-Origin', '*');
  
-        $this->Stages = TableRegistry::get('Stages');
-        
-		$bento_id = $this->request->data('bento_id');
-        $menu_id = $this->request->data('menu_id');
-        $status = $this->request->data('status');
-		$data = [
-        	'bento_id' => 1,
-        	'menu_id' => 3,
-			'want_menu_id' => 5
-		];
-		$entity = $this->Stages->patchEntity($entity, $data); 
-		$this->Stages->save($entity);   
+   		$stagesTable = TableRegistry::get('Stages');
+		$stage = $stagesTable->newEntity();
+
+		$stage->bento_id = 1;
+		$stage->menu_id = 3;
+		$stage->want_menu_id = 5;
+
+		$stagesTable->save($stage);
 	}
 }
 
