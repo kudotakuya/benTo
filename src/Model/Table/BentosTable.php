@@ -5,7 +5,7 @@ namespace App\Model\Table;
 use Cake\ORM\Query;
 use Cake\ORM\Table;
 
-class BentoTable extends Table {
+class BentosTable extends Table {
 
     public function initialize(array $config) {
 
