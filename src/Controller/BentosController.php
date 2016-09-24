@@ -105,7 +105,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 	  $this->response->header('Access-Control-Allow-Origin', '*');
       $bento_id = $this->request->data('bento_id');
 
-      $query = $this->Bentos->find('all',[
+      $query = $this->Bentos->find('toArray',[
           'fields' => array('id','activation'),
           'conditions' => array('id' => 1),
           'contain'=>['BentoMenus']
