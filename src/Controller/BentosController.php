@@ -10,7 +10,7 @@ class BentosController extends AppController{
 
     public function index(){
 
-
+$this->response->header('Access-Control-Allow-Origin', '*');
         $id = $this->request->data('id');
         $this->Bentos->updateAll(
             array ( 'activation' =>0),
@@ -44,12 +44,12 @@ class BentosController extends AppController{
   }
 
     public function activate(){
-
+      $this->response->header('Access-Control-Allow-Origin', '*');
       $bento_id = $this->request->data('bento_id');
 
       $query = $this->Bentos->find('all',[
             'fields' => array('id','activation'),
-            'conditions' => array('id' => 1)
+            'conditions' => array('id' => $bento_id)
         ]);
 
 
