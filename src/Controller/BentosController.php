@@ -120,7 +120,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
             ->find();
 
 
-		print_r($menuquery);
+		print_r($menuquery->toArray());
 	  
 
       $this->autoRender = false;
