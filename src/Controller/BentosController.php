@@ -16,11 +16,11 @@ class BentosController extends AppController{
             echo $row->id;
         }
 
-        $this->autoRender = false;
-        $someVariable = .....;
+     //   $this->autoRender = false;
+     //   $someVariable = .....;
 
-        $this->response->charset('UTF-8');
-        $this->response->type('json');
+     //   $this->response->charset('UTF-8');
+     //   $this->response->type('json');
      //   echo json_encode($someVariable); 
     }
 }
