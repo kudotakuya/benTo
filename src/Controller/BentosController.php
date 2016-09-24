@@ -11,9 +11,9 @@ class BentosController extends AppController{
     public function index(){
 
 
-        $id = $this->request->data('id','menu_id');
+        $id = $this->request->data('id');
         $query = $this->Bentos->find('all',[
-         'fields' => array('id'),
+         'fields' => array('id','menu_id'),
             'conditions' => array('id' => 2),
             'contain'=>['BentoMenus']
         ]);
