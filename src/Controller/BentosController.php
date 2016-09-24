@@ -85,6 +85,12 @@ $this->response->header('Access-Control-Allow-Origin', '*');
             'contain'=>['Stages']
         ]);
 print_r($query->toArray());
+          $bentoArray = array();
+          foreach ($query->toArray() as $row) {
+                array_push($bentoArray, $row['stages']);
+             }
+          }
+	
 //         $query = $this->Bentos->find()
 //   			 ->hydrate(false)
 //   			 ->join([
