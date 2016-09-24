@@ -74,7 +74,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 			->join([
 				'table' => 'menus',
 				'alias' => 'Menus',
-				'type' => 'INNER',
+				'type' => 'LEFT',
 				'conditions' => 'Stages.menu_id = Menus.id'
 			]);
 
