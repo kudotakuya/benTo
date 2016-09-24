@@ -162,7 +162,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
       $query = $this->stagesTable->find('all',[
           'conditions' => array('Stages.bento_id' => 1)
       ]);
-        print_r($query->toArray());
+        print_r($query->toArray()[0]['status']);
 
       $this->autoRender = false;
 
