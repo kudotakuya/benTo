@@ -1,7 +1,7 @@
 <?php 
 namemespace App\Model\Table;
 
-use Cake\ORM\Table;
+//use Cake\ORM\Table;
 
 class BentoTable extends Table {
 
