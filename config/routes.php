@@ -61,6 +61,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/bentos/wantList', ['controller' => 'Bentos', 'action' => 'wantList']);
     $routes->connect('/bentos/exchangeList', ['controller' => 'Bentos', 'action' => 'exchangeList']);
     $routes->connect('/bentos/addwant', ['controller' => 'Bentos', 'action' => 'addwant']);
+    $routes->connect('/bentos/light', ['controller' => 'Bentos', 'action' => 'light']);
     /**
      * Connect catchall routes for all controllers.
      *

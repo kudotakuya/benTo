@@ -151,5 +151,29 @@ $this->response->header('Access-Control-Allow-Origin', '*');
         $stage = $this->stagesTable->patchEntity($stage, $data);
         $this->stagesTable->save($stage);
     }
+
+    public function light(){
+      $this->response->header('Access-Control-Allow-Origin', '*');
+      $bento_id = $this->request->data('bento_id');
+
+
+      $this->stagesTable = TableRegistry::get('Stages');
+      
+      $query = $this->Bentos->find('all',[
+          'conditions' => array('id' => $bento_id)
+      ]);
+      
+      $this->autoRender = false;
+
+      $this->response->charset('UTF-8');
+      $this->response->type('json');
+        
+
+	  echo json_encode($query);
+ 
+
+
+
+    } 
 }
 ?>
