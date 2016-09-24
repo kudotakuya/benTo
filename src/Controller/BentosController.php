@@ -98,7 +98,7 @@ print_r($query->toArray());
 
         $this->response->charset('UTF-8');
         $this->response->type('json');
-        echo json_encode($query->toArray()[0]['stages']);
+        echo json_encode($query);
 
 	}
 
