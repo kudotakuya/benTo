@@ -1,5 +1,6 @@
-<?php 
-namemespace App\Model\Table;
+<?php
+
+namespace App\Model\Table;
 
 use Cake\ORM\Query;
 use Cake\ORM\Table;
