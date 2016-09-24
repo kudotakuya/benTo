@@ -11,8 +11,11 @@ class BentosController extends AppController{
     public function index(){
 
 
-        $this->Bentos->save(array('id' => 1),'activation' => 0);
-        
+      //  $this->Bentos->save(array('id' => 1),'activation' => 0);
+        $this->Bentos->updateAll(
+                   array ( 'activation' =>0),
+                          array ( 'id'   => 1 ) );
+
         $id = $this->request->data('id');
         $query = $this->Bentos->find('all',[
             'fields' => array('id','activation'),
