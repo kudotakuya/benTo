@@ -68,6 +68,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
         $this->response->header('Access-Control-Allow-Origin', '*');
 
          $query = $this->Bentos->find()
+			->hydrate(false)
 			->join([
 				'table' => 'stages',
             	'alias' => 'Stages',
