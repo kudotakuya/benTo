@@ -9,7 +9,7 @@ class BentosController extends AppController{
     public $name = 'Bentos';
 
     public function index(){
-        $tableBento = TableRegistry::get('Bentos');
+        $tableBento = TableRegistry::get('Bento_menus');
         $query = $tableBento->find();
         $bentoArray = array();
         foreach ($query as $row) {
