@@ -34,9 +34,9 @@ class BentosController extends AppController{
 
     public function menuset(){
 
-        $bento_id = $this->request->data('bento_id');
-        $menu_id = $this->request->data('menu_id');
-        $status = $this->request->data('status');
+  //      $bento_id = $this->request->data('bento_id');
+ //       $menu_id = $this->request->data('menu_id');
+ //       $status = $this->request->data('status');
 
   //      $this->BentoMenus->updateAll(
   //          array ( 'flag' =>0),
