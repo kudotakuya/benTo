@@ -1,6 +1,7 @@
 <?php 
 namemespace App\Model\Table;
 
+use Cake\ORM\Query;
 use Cake\ORM\Table;
 
 class BentoTable extends Table {
@@ -14,7 +15,7 @@ class BentoTable extends Table {
         $this->primaryKey('id');
         
       //  $this->table('bento');
-        $this->hasMany('stages, [
+        $this->hasMany('bento_menus, [
             'foreignKey' => 'bento_id',
             ]);
     }
