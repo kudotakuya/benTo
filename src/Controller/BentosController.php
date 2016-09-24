@@ -75,7 +75,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 //				'table' => 'menus',
 //				'alias' => 'Menus',
 //				'type' => 'INNER',
-//				'conditions' => 'Stages.id = Menu.bento_id'
+//				'conditions' => 'Stages.menu_id = Menu.id'
 //			]);
 
 //  		$query = $this->Bentos->find('all',[
@@ -92,7 +92,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
        			 'type' => 'INNER',
        			 'conditions' => 'Bentos.id = Stages.bento_id'
    			 ]);
-var_dump($this->Bentos->getDataSource()->getLog());
+//var_dump($this->Bentos->getDataSource()->getLog());
         $this->autoRender = false;
 
         $this->response->charset('UTF-8');
