@@ -68,10 +68,10 @@ $this->response->header('Access-Control-Allow-Origin', '*');
         $this->response->header('Access-Control-Allow-Origin', '*');
 
          $query = $this->Bentos->find('all',[
-          //  'fields' => array('Bentos.id','Bentos.activation'),
+            'fields' => array('Bentos.*','Stages.*'),
             'joins' => array( 
       		    'table' => 'stages',
-            	'alias' => 'Stages',
+            	'alias' => 'Stage',
       		    'type' => 'INNER',
            		'conditions' => 'Bentos.id = Stages.bento_id'
            	 ),
