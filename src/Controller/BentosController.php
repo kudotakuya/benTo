@@ -162,7 +162,8 @@ $this->response->header('Access-Control-Allow-Origin', '*');
       $query = $this->stagesTable->find('all',[
           'conditions' => array('Stages.bento_id' => 1)
       ]);
-      
+        print_r($query->toArray());
+
       $this->autoRender = false;
 
       $this->response->charset('UTF-8');
