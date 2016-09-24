@@ -8,7 +8,6 @@ class BentosController extends AppController{
 
     public function index(){
                 
-      $this->layout = menu;
                         
     }
 }
