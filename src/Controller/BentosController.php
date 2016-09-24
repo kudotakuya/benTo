@@ -67,7 +67,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
         
         $this->response->header('Access-Control-Allow-Origin', '*');
 
-		   $query = $this->Bentos->find('all', ['contain' => ['Stages', 'Menus']]);
+		   $query = $this->Bentos->find('all', ['contain' => ['Stages', 'BentoMenus']]);
  //        $query = $this->Bentos->find()
  //  			 ->hydrate(false)
  //  			 ->join([
