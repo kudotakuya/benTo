@@ -3,7 +3,7 @@ namemespace App\Model\Table;
 
 use Cake\ORM\Table;
 
-class BookTitleTable extends Table {
+class BentoTable extends Table {
 
     public function initialize(array $config) {
       //  $this->table('bento');
