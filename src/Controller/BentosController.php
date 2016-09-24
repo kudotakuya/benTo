@@ -25,7 +25,7 @@ class BentosController extends AppController{
         echo json_encode($query);
 
         // 更新
-        $this->Bentos->save(array('id' => 1),'activation' => 0);
+       // $this->Bentos->save(array('id' => 1),'activation' => 0);
     }
 }
 
