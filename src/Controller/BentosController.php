@@ -166,7 +166,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 
       //  if($query->toArray()[0]['status'] == 1){
             $this->bentomenu = TableRegistry::get('Stages');
-    //        $posi = $this->bentomenu->find('all');↲
+            $posi = $this->bentomenu->find('all');
       //  }
       $this->autoRender = false;
 
