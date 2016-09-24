@@ -166,9 +166,9 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 
         if($query->toArray()[0]['status'] == 1){
             $this->bentomenuTable = TableRegistry::get('BentoMenus');
-         //   $positionquery = $this->bentomenuTable->find('all',[↲
-        //          'conditions' => array('and' => array('BentoMenus.bento_id' => 1,'BentoMenus.menu_id' => $query->toArray()[0]['menu_id'] ))↲
-        //     ]);↲
+            $positionquery = $this->bentomenuTable->find('all',[↲
+                  'conditions' => array('and' => array('BentoMenus.bento_id' => 1,'BentoMenus.menu_id' => $query->toArray()[0]['menu_id'] ))↲
+             ]);↲
         }
       $this->autoRender = false;
 
