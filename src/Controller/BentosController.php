@@ -113,9 +113,9 @@ $this->response->header('Access-Control-Allow-Origin', '*');
         $bentoArray = array();
         foreach ($query->toArray()[0]['bento_menus'] as $row) {
             
-           array_push($bentoArray, $row);
+           array_push($bentoArray, $row['menu_id']);
         }
-       print_r($query->toArray()[0]['bento_menus']);
+        print_r($query->toArray()[0]['bento_menus']);
         $this->autoRender = false;
 
         $this->response->charset('UTF-8');
