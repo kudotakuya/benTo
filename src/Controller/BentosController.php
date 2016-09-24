@@ -115,9 +115,9 @@ $this->response->header('Access-Control-Allow-Origin', '*');
             
          array_push($bentoArray, $row['menu_id']);
       }
-        $posts_table = TableRegistry::get('Stages');
+        $posts_table = TableRegistry::get('Menus');
         $menuquery = $posts_table->find('all');
-		print_r($memuquery->toArray());
+	//	print_r($memuquery->toArray());
 	
 	  
 
