@@ -60,6 +60,23 @@ $this->response->header('Access-Control-Allow-Origin', '*');
         $this->response->charset('UTF-8');
         $this->response->type('json');
         echo json_encode($query);
+    }
+
+
+    public funtion wantList(){
+        
+        $this->response->header('Access-Control-Allow-Origin', '*');
+
+         $query = $this->Bentos->find('all',[
+            'fields' => array('id','activation'),
+            'contain'=>['Stages']
+        ]);
+
+        $this->autoRender = false;
+
+        $this->response->charset('UTF-8');
+        $this->response->type('json');
+        echo json_encode($query);
 
 
 
