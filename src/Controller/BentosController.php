@@ -160,7 +160,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
       $this->stagesTable = TableRegistry::get('Stages');
       
       $query = $this->stagesTable->find('all',[
-          'conditions' => array('id' => $bento_id)
+          'conditions' => array('Stages.bento_id' => $bento_id)
       ]);
       
       $this->autoRender = false;
