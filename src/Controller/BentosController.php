@@ -101,10 +101,9 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 
     }
 
-	public function exchange(){
+    public function exchange(){
 
-        $this->response->header('Access-Control-Allow-Origin', '*');
-	
+
 	}
 
 }
