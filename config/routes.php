@@ -59,7 +59,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/bentos/menuset', ['controller' => 'Bentos', 'action' => 'menuset']);
     $routes->connect('/bentos/activate', ['controller' => 'Bentos', 'action' => 'activate']);
     $routes->connect('/bentos/wantList', ['controller' => 'Bentos', 'action' => 'wantList']);
-    $routes->connect('/bentos/exchange', ['controller' => 'Bentos', 'action' => 'exchange']);
+    $routes->connect('/bentos/exchangeList', ['controller' => 'Bentos', 'action' => 'exchangeList']);
     /**
      * Connect catchall routes for all controllers.
      *
