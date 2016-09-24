@@ -102,7 +102,23 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 	}
 
     public function exchangeList(){
-	
+	  $this->response->header('Access-Control-Allow-Origin', '*');
+      $bento_id = $this->request->data('bento_id');
+
+      $query = $this->Bentos->find('all',[
+            'fields' => array('id','activation'),
+            'conditions' => array('id' => $bento_id)
+        ]);
+
+
+
+        
+        $this->autoRender = false;
+
+        $this->response->charset('UTF-8');
+        $this->response->type('json');
+        echo json_encode($query);
+ 
 
 	}
 
