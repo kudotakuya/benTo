@@ -17,8 +17,8 @@ $this->response->header('Access-Control-Allow-Origin', '*');
             array ( 'id'   => $id ) );
 
         $query = $this->Bentos->find('all',[
-            'fields' => array('Bentos.id','Bentos.activation'),
-            'conditions' => array('id' => 1),
+            'fields' => array('id','activation'),
+            'conditions' => array('id' => $id),
             'contain'=>['BentoMenus']
         ]);
 
@@ -71,7 +71,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
             'fields' => array('Bentos.id','Bentos.activation'),
             'joins' => [
         		'comment' => [
-        		    'table' => 'stages',
+        		    'table' => 'Stages',
             		'alias' => 'Stages',
        			    'type' => 'inner',
            			'conditions' => [
