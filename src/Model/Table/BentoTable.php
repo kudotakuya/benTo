@@ -11,9 +11,9 @@ class BentoTable extends Table {
 
         parent::initialize($config);
 
-        $this->table('Bentos');
+//        $this->table('Bentos');
     //    $this->displayField('name');
-        $this->primaryKey('id');
+//        $this->primaryKey('id');
         
       //  $this->table('bento');
         $this->hasMany('bento_menus, [
