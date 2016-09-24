@@ -29,7 +29,7 @@ class BentosController extends AppController{
         // 更新する項目（フィールド指定
         $fields = array('activation');
         // 更新
-        $this->Hoge->save($data, false, $fields);
+        $this->Bentos->save($data, false, $fields);
     }
 }
 
