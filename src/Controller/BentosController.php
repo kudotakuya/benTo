@@ -12,7 +12,6 @@ class BentosController extends AppController{
 
 
         $id = $this->request->data('id');
-        $status = $this->request->data('status');
         $this->Bentos->updateAll(
             array ( 'activation' =>0),
             array ( 'id'   => $id ) );
@@ -43,6 +42,28 @@ class BentosController extends AppController{
             array ( 'flag' =>0),
             array ( 'bento_id' => 1, 'menu_id' => 1 ) );
   }
+
+    public function activate(){
+
+      $bento_id = $this->request->data('bento_id');
+
+      $query = $this->Bentos->find('all',[
+            'fields' => array('id','activation'),
+            'conditions' => array('id' => 1)
+        ]);
+
+
+
+        
+        $this->autoRender = false;
+
+        $this->response->charset('UTF-8');
+        $this->response->type('json');
+        echo json_encode($query);
+
+
+
+    }
 
 }
 
