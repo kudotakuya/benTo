@@ -146,7 +146,9 @@ $this->response->header('Access-Control-Allow-Origin', '*');
     public function addWant(){
 	  $this->response->header('Access-Control-Allow-Origin', '*');
  
-        $bento_id = $this->request->data('bento_id');
+        $this->BentoMenus = TableRegistry::get('Stages');
+        
+		$bento_id = $this->request->data('bento_id');
         $menu_id = $this->request->data('menu_id');
         $status = $this->request->data('status');
 		$data = [
@@ -154,8 +156,14 @@ $this->response->header('Access-Control-Allow-Origin', '*');
         	'menu_id' => 3,
 			'want_menu_id' => 5
 		];
-        $this->BentoMenus = TableRegistry::get('Stages');
-        $this->BentoMenus->save($data);
+		// Entities作成
+		$entities = $this->BentoMenus->newEntities($data);
+
+		// Entitiesの分だけ保存処理
+	//	foreach ($entities as $entity) {
+    	// Save entity
+    	$this->BentoMenus->save($entities);
+	//	}
     }
 }
 
