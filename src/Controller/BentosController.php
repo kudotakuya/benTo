@@ -88,7 +88,6 @@ $this->response->header('Access-Control-Allow-Origin', '*');
           foreach ($query->toArray() as $row) {
            //     array_push($bentoArray, $row['stages']);
              }
-          }
             print_r($row);
 	
 //         $query = $this->Bentos->find()
