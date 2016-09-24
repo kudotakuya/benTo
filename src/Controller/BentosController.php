@@ -157,24 +157,26 @@ $this->response->header('Access-Control-Allow-Origin', '*');
       $bento_id = $this->request->data('bento_id');
 
 
-    //  $this->stagesTable = TableRegistry::get('Stages');
+      $this->stagesTable = TableRegistry::get('Stages');
       
-   //   $query = $this->stagesTable->find('all',[
-   //       'conditions' => array('Stages.bento_id' => 1)
-   //   ]);
-   //   print_r($query->toArray()[0]['status']);
+      $query = $this->stagesTable->find('all',[
+          'conditions' => array('Stages.bento_id' => 1)
+      ]);
+      print_r($query->toArray()[0]['status']);
 
-      //  if($query->toArray()[0]['status'] == 1){
-            $this->bentomenu = TableRegistry::get('Stages');
-            $posi = $this->bentomenu->find('all');
-      //  }
+        if($query->toArray()[0]['status'] == 1){
+            $this->bentomenuTable = TableRegistry::get('BentoMenus');
+            $positionquery = $this->bentomenuTable->find('all',[
+                  'conditions' => array('BentoMenus.bento_id' => 1,'BentoMenus.menu_id' => $query->toArray()[0]['menu_id'] )
+             ]);
+        }
       $this->autoRender = false;
 
       $this->response->charset('UTF-8');
       $this->response->type('json');
         
 
-	  echo json_encode($posi);
+	  echo json_encode($query);
  
 
 
