@@ -21,7 +21,7 @@ class BentosController extends AppController{
 
         $this->response->charset('UTF-8');
         $this->response->type('json');
-        echo json_encode($someVariable); 
+     //   echo json_encode($someVariable); 
     }
 }
 
