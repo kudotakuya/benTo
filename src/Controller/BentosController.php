@@ -82,7 +82,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 //		debug($query->sql());
   		$query = $this->Bentos->find('all',[
             'fields' => array('Bentos.id'),
-            'conditions' =>array('NOT'=> array('id' => 1)),
+            'conditions' =>array('NOT'=> array('id' => $bento_id)),
             'contain'=>['Stages']
         ]);
     //   print_r($query->toArray());
