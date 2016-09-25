@@ -87,8 +87,10 @@ $this->response->header('Access-Control-Allow-Origin', '*');
         ]);
           $bentoArray = array();
           foreach ($query->toArray() as $row) {
-                array_push($bentoArray, $row['stages']);
-             }
+            if($row['stages']['id'] > 0){
+              array_push($bentoArray, $row['stages']);
+            }
+          }
 	
 //         $query = $this->Bentos->find()
 //   			 ->hydrate(false)
@@ -194,6 +196,12 @@ $this->response->header('Access-Control-Allow-Origin', '*');
         $this->BentoMenus->updateAll(
             array ( 'status' => 1),
             array ( 'bento_id' => $bento_id ) );
+
+    }
+
+    public function success(){
+
+
 
     }
 
