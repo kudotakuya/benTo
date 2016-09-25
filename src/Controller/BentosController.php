@@ -42,7 +42,15 @@ $this->response->header('Access-Control-Allow-Origin', '*');
         $this->BentoMenus->updateAll(
             array ( 'flag' => $status),
             array ( 'bento_id' => $bento_id, 'menu_id' => $menu_id ) );
-  }
+        if($status == 0){
+            $this->stagetable = TableRegistry::get('Stages');
+            $this->stagetable->updateAll(
+                array ( 'status' => 0),
+                array ( 'bento_id' => $bento_id, 'menu_id' => $menu_id ) );
+         }
+    
+    
+    }
 
     public function activate(){
       $this->response->header('Access-Control-Allow-Origin', '*');
