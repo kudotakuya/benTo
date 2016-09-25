@@ -191,6 +191,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
 
     public function match(){
 
+      $this->response->header('Access-Control-Allow-Origin', '*');
         $bento_id = $this->request->data('bento_id');
 
         $this->BentoMenus = TableRegistry::get('Stages');
