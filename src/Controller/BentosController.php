@@ -88,9 +88,9 @@ $this->response->header('Access-Control-Allow-Origin', '*');
        print_r($query->toArray());
         $bentoArray = array();
           foreach ($query->toArray() as $row) {
-         //   if($row['stages']['id'] != null){
+            if($row['stages'][0]['id'] != null){
               array_push($bentoArray, $row['stages']);
-         //   }
+            }
           }
 	
 //         $query = $this->Bentos->find()
