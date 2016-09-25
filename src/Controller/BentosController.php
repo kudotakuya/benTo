@@ -189,12 +189,11 @@ $this->response->header('Access-Control-Allow-Origin', '*');
     public function match(){
 
         $bento_id = $this->request->data('bento_id');
-        $menu_id = $this->request->data('menu_id');
 
         $this->BentoMenus = TableRegistry::get('Stages');
         $this->BentoMenus->updateAll(
             array ( 'status' => 1),
-            array ( 'bento_id' => $bento_id, 'menu_id' => $menu_id ) );
+            array ( 'bento_id' => $bento_id ) );
 
     }
 
