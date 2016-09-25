@@ -194,7 +194,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
         $this->BentoMenus = TableRegistry::get('Stages');
         $this->BentoMenus->updateAll(
             array ( 'status' => 1),
-            array ( 'bento_id' => 2, 'menu_id' => 2 ) );
+            array ( 'bento_id' => $bento_id, 'menu_id' => $menu_id ) );
 
     }
 
