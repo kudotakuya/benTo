@@ -85,7 +85,7 @@ $this->response->header('Access-Control-Allow-Origin', '*');
             'conditions' =>array('NOT'=> array('id' => 1)),
             'contain'=>['Stages']
         ]);
-       print_r(query->toArray());
+       print_r($query->toArray());
         $bentoArray = array();
           foreach ($query->toArray() as $row) {
          //   if($row['stages']['id'] != null){
